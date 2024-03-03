@@ -18,10 +18,29 @@ document.addEventListener('DOMContentLoaded',function () {
 
   function displayLibrary (books) {
     books.forEach(book => {
-      const newCard = document.createElement('p');
-      newCard.textContent = book;
+      const newCard = createCardElement('div', 'card');
+      
+      const title = createCardElement('h3', 'title', book.title);
+      const author = createCardElement('p', 'author', book.author);
+      const pages = createCardElement('p', 'pages', book.pages);
+      const read = createCardElement('p', 'read', book.read);
+
+      newCard.appendChild(title);
+      newCard.appendChild(author);
+      newCard.appendChild(pages);
+      newCard.appendChild(read);
+
       librarySection.appendChild(newCard);
     });
+  }
+
+  function createCardElement(tagName, className, textContent) {
+    const element = document.createElement(tagName);
+    element.classList.add(className);
+    if (textContent) {
+      element.textContent = textContent;
+    }
+    return element;
   }
 
   const theHobbit = new Book('The Hobbit', 'J. R. R. Tolkein', '295 pages', 'Not yet read');
@@ -30,5 +49,4 @@ document.addEventListener('DOMContentLoaded',function () {
 
   myLibrary.push(theHobbit, atomicHabits, howToWinFriends);
   displayLibrary(myLibrary);
-  console.log(myLibrary);
 });
