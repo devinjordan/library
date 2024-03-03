@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded',function () {
   const theHobbit = new Book('The Hobbit', 'J. R. R. Tolkein', '295 pages', 'Not yet read');
   const atomicHabits = new Book('Atomic Habits', 'James Clear', '306 pages', 'Read');
   const howToWinFriends = new Book('How to Win Friends and Influence People', 'Dale Carnegie', '260 pages', 'In Progress');
+  const thinkingFast = new Book('Thinking Fast and Slow', 'Daniel Kahneman', '499 pages', 'In progress');
 
-  myLibrary.push(theHobbit, atomicHabits, howToWinFriends);
+  myLibrary.push(theHobbit, atomicHabits, howToWinFriends, thinkingFast);
   displayLibrary(myLibrary);
 });
