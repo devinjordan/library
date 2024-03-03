@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  --primary: #004225;
+  --secondary: #f5f5dc;
+  --accent1: #ffb000;
+  --accent2: #ffcf9d;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  color: var(--accent1);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  background-image: url(./images/bg-library.jpg);
+  min-height: 60vh;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+}
+
+.library {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 20rem));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 20rem));
+}
+
+.card {
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  background-color: var(--secondary);
+  border-radius: 28px;
+}
