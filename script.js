@@ -1,6 +1,9 @@
+// Start script up once the DOM is ready
 document.addEventListener('DOMContentLoaded',function () {
   const myLibrary = [];
   const librarySection = document.querySelector('.library');
+  const addBookForm = document.querySelector('.add-book-form')
+  const newBookButton = document.querySelector('#new-book-button');
 
   function Book (title, author, pages, read) {
       this.title = title;
@@ -8,7 +11,7 @@ document.addEventListener('DOMContentLoaded',function () {
       this.pages = pages;
       this.read = read;
       this.info = function bookInfo() {
-          return this.title + ", " + this.author + ", " + this.pages + ", " + this.read;
+        return this.title + ", " + this.author + ", " + this.pages + ", " + this.read;
       }
   }
 
@@ -42,6 +45,10 @@ document.addEventListener('DOMContentLoaded',function () {
     }
     return element;
   }
+
+  newBookButton.addEventListener('click', () => {
+
+  })
 
   const theHobbit = new Book('The Hobbit', 'J. R. R. Tolkein', '295 pages', 'Not yet read');
   const atomicHabits = new Book('Atomic Habits', 'James Clear', '306 pages', 'Read');
