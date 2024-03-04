@@ -105,7 +105,7 @@ input:checked {
 
 .card {
   color: var(--primary);
-  height: 10rem;
+  /* height: 11rem; */
   box-sizing: border-box;
   flex-direction: column;
   margin: 1rem;
@@ -123,4 +123,14 @@ p, h3 {
 
 .author {
   font-style: italic;
+}
+
+.readDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.read {
+  margin-left: 1rem;
 }
