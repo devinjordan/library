@@ -100,13 +100,12 @@ input:checked {
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(200px, 20rem));
-  grid-template-rows: repeat(auto-fit, minmax(200px, 20rem));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 12.5rem));
 }
 
 .card {
   color: var(--primary);
-  display: grid;
-  height: 19rem;
+  height: 10rem;
   box-sizing: border-box;
   flex-direction: column;
   margin: 1rem;
@@ -118,3 +117,10 @@ input:checked {
   border-bottom: 5px solid var(--accent1);
 }
 
+p, h3 {
+  margin: 0;
+}
+
+.author {
+  font-style: italic;
+}
