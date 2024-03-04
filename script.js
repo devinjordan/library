@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded',function () {
     const newTitle = document.getElementById('title').value;
     const newAuthor = document.getElementById('author').value;
     const newPages = document.getElementById('pages').value;
-    const newRead = document.getElementById('read').value;
+    const newRead = document.getElementById('read');
 
     const newBook = new Book(newTitle, newAuthor, newPages, newRead);
     myLibrary.push(newBook);
