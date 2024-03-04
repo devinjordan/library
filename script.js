@@ -27,11 +27,14 @@ document.addEventListener('DOMContentLoaded',function () {
       const title = createCardElement('h3', 'title', book.title);
       const author = createCardElement('p', 'author', book.author);
       const pages = createCardElement('p', 'pages', book.pages);
-      const read = createCardElement('p', 'read', book.read);
+      const readLabel = createCardElement('label', 'readLabel', "Read?:");
+      const read = createCardElement('input', 'read', book.read);
+      read.type = "checkbox";
 
       newCard.appendChild(title);
       newCard.appendChild(author);
       newCard.appendChild(pages);
+      newCard.appendChild(readLabel);
       newCard.appendChild(read);
 
       librarySection.appendChild(newCard);
