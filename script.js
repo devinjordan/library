@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded',function () {
       this.author = author;
       this.pages = pages;
       this.read = read;
-      this.info = function bookInfo() {
-        return this.title + ", " + this.author + ", " + this.pages + ", " + this.read;
-      }
   }
 
   function displayLibrary (books) {
@@ -27,8 +24,9 @@ document.addEventListener('DOMContentLoaded',function () {
       const readDiv = createCardElement('div', 'readDiv');
       const removeBook = createCardElement('button', 'removeBook', 'remove');
       const readLabel = createCardElement('label', 'readLabel', "Read?");
-      const read = createCardElement('input', 'read', book.read);
+      const read = createCardElement('input', 'read');
       read.type = "checkbox";
+      read.checked = book.read;
 
       readDiv.appendChild(removeBook);
       readDiv.appendChild(readLabel);
@@ -68,7 +66,7 @@ document.addEventListener('DOMContentLoaded',function () {
     const newTitle = document.getElementById('title').value;
     const newAuthor = document.getElementById('author').value;
     const newPages = document.getElementById('pages').value;
-    const newRead = document.getElementById('read');
+    const newRead = document.getElementById('read').checked;
 
     const newBook = new Book(newTitle, newAuthor, newPages, newRead);
     myLibrary.push(newBook);
@@ -77,6 +75,8 @@ document.addEventListener('DOMContentLoaded',function () {
     librarySection.innerHTML = '';
     displayLibrary(myLibrary);
     console.log(myLibrary);
+    console.log(newRead);
+    console.log(newBook);
   }
 
   // newBookButton.addEventListener('click', () => {
@@ -87,11 +87,11 @@ document.addEventListener('DOMContentLoaded',function () {
   //   }
   // });
 
-  const theHobbit = new Book('The Hobbit', 'J. R. R. Tolkein', 295, 'Not yet read');
-  const atomicHabits = new Book('Atomic Habits', 'James Clear', 306, 'Read');
-  const howToWinFriends = new Book('How to Win Friends and Influence People', 'Dale Carnegie', 260, 'In Progress');
-  const thinkingFast = new Book('Thinking Fast and Slow', 'Daniel Kahneman', 499, 'In progress');
-  const saltFat = new Book('Salt Fat Acid Heat', 'Samin Nosrat', 622, value='yes');
+  const theHobbit = new Book('The Hobbit', 'J. R. R. Tolkein', 295, false);
+  const atomicHabits = new Book('Atomic Habits', 'James Clear', 306, true);
+  const howToWinFriends = new Book('How to Win Friends and Influence People', 'Dale Carnegie', 260, false);
+  const thinkingFast = new Book('Thinking Fast and Slow', 'Daniel Kahneman', 499, false);
+  const saltFat = new Book('Salt Fat Acid Heat', 'Samin Nosrat', 622, false);
 
   myLibrary.push(theHobbit, atomicHabits, howToWinFriends, thinkingFast, saltFat);
   displayLibrary(myLibrary);
