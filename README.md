@@ -2,6 +2,8 @@
 
 Tapping into more DOM manipulation, CSS grid, and object construction. Not gonna lie, I'm fairly proud of this one.
 
+[Live Preview](https://devinjordan.github.io/odin-library/)
+
 ## How to Use
 - Books may be added by filling in the form elements and clicking submit
 - Remove individual books by clicking the remove button
