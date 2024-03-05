@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded',function () {
       newCard.setAttribute('id', 'book' + index);
 
       removeBook.addEventListener('click', () => {
-        myLibrary.splice(index, index + 1);
+        myLibrary.splice(index, 1);
         librarySection.innerHTML = '';
         displayLibrary(myLibrary);    
       });
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded',function () {
   const atomicHabits = new Book('Atomic Habits', 'James Clear', 306, 'Read');
   const howToWinFriends = new Book('How to Win Friends and Influence People', 'Dale Carnegie', 260, 'In Progress');
   const thinkingFast = new Book('Thinking Fast and Slow', 'Daniel Kahneman', 499, 'In progress');
-  const saltFat = new Book('Salt Fat Acid Heat', 'Samin Nosrat', 622, 'In progress');
+  const saltFat = new Book('Salt Fat Acid Heat', 'Samin Nosrat', 622, value='yes');
 
   myLibrary.push(theHobbit, atomicHabits, howToWinFriends, thinkingFast, saltFat);
   displayLibrary(myLibrary);
