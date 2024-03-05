@@ -90,6 +90,11 @@ input {
   text-align: center;
 }
 
+form input {
+  opacity: 90%;
+  box-shadow: 0 0 5px black;
+}
+
 input:checked {
   accent-color: var(--accent1);
 }

@@ -68,6 +68,14 @@ document.addEventListener('DOMContentLoaded',function () {
     const newPages = document.getElementById('pages').value;
     const newRead = document.getElementById('read').checked;
 
+    if (!newTitle || !newAuthor || !newPages) {
+      alert("Please fill in all required fields.");
+      return;
+    } else if (newPages <= 0) {
+      alert("Pages must be a positive number");
+      return;
+    }
+
     const newBook = new Book(newTitle, newAuthor, newPages, newRead);
     myLibrary.push(newBook);
 
