@@ -16,23 +16,21 @@ document.addEventListener('DOMContentLoaded',function () {
       }
   }
 
-  function addBooktoLibrary () {
-
-  }
-
   function displayLibrary (books) {
-    books.forEach(book => {
+    books.forEach((book, index) => {
       const newCard = createCardElement('div', 'card');
       
       const title = createCardElement('h3', 'title', book.title);
       const author = createCardElement('p', 'author', book.author);
-      const pages = createCardElement('p', 'pages', book.pages);
+      const pages = createCardElement('p', 'pages', book.pages + ' pages');
       const space = createCardElement('br');
       const readDiv = createCardElement('div', 'readDiv');
+      const removeBook = createCardElement('button', 'removeBook', 'remove');
       const readLabel = createCardElement('label', 'readLabel', "Read?");
       const read = createCardElement('input', 'read', book.read);
       read.type = "checkbox";
 
+      readDiv.appendChild(removeBook);
       readDiv.appendChild(readLabel);
       readDiv.appendChild(read);
 
@@ -41,6 +39,13 @@ document.addEventListener('DOMContentLoaded',function () {
       newCard.appendChild(pages);
       newCard.appendChild(space);
       newCard.appendChild(readDiv);
+      newCard.setAttribute('id', 'book' + index);
+
+      removeBook.addEventListener('click', () => {
+        myLibrary.splice(index, index + 1);
+        librarySection.innerHTML = '';
+        displayLibrary(myLibrary);    
+      });
 
       librarySection.appendChild(newCard);
     });
@@ -67,8 +72,11 @@ document.addEventListener('DOMContentLoaded',function () {
 
     const newBook = new Book(newTitle, newAuthor, newPages, newRead);
     myLibrary.push(newBook);
+
+    // clear and refresh library with new card
     librarySection.innerHTML = '';
     displayLibrary(myLibrary);
+    console.log(myLibrary);
   }
 
   // newBookButton.addEventListener('click', () => {
@@ -79,11 +87,11 @@ document.addEventListener('DOMContentLoaded',function () {
   //   }
   // });
 
-  const theHobbit = new Book('The Hobbit', 'J. R. R. Tolkein', '295 pages', 'Not yet read');
-  const atomicHabits = new Book('Atomic Habits', 'James Clear', '306 pages', 'Read');
-  const howToWinFriends = new Book('How to Win Friends and Influence People', 'Dale Carnegie', '260 pages', 'In Progress');
-  const thinkingFast = new Book('Thinking Fast and Slow', 'Daniel Kahneman', '499 pages', 'In progress');
-  const saltFat = new Book('Salt Fat Acid Heat', 'Samin Nosrat', '622 pages', 'In progress');
+  const theHobbit = new Book('The Hobbit', 'J. R. R. Tolkein', 295, 'Not yet read');
+  const atomicHabits = new Book('Atomic Habits', 'James Clear', 306, 'Read');
+  const howToWinFriends = new Book('How to Win Friends and Influence People', 'Dale Carnegie', 260, 'In Progress');
+  const thinkingFast = new Book('Thinking Fast and Slow', 'Daniel Kahneman', 499, 'In progress');
+  const saltFat = new Book('Salt Fat Acid Heat', 'Samin Nosrat', 622, 'In progress');
 
   myLibrary.push(theHobbit, atomicHabits, howToWinFriends, thinkingFast, saltFat);
   displayLibrary(myLibrary);

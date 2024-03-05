@@ -55,6 +55,12 @@ button {
   padding: .5rem .75rem .5rem .75rem;
 }
 
+button:active {
+  color: var(--primary);
+  background-color: var(--accent1);
+}
+
+
 form {
   /* height: 0px;
   overflow: hidden;
@@ -65,6 +71,7 @@ form {
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   gap: 1rem;
+  column-gap: 4rem;
   color: var(--accent1);
   font-size: 1.5rem;
   font-weight: 700;
@@ -80,6 +87,7 @@ input {
   border-radius: 1rem;
   border-color: var(--accent1);
   height: 1.5rem;
+  text-align: center;
 }
 
 input:checked {
@@ -96,7 +104,7 @@ input:checked {
 
 
 .library {
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -118,6 +126,17 @@ input:checked {
   border-bottom: 5px solid var(--accent1);
 }
 
+.card button {
+  border: none;
+  background-color: var(--secondary);
+  color: #c99f72;
+  margin-right: 4rem;
+}
+
+.card button:hover {
+  background-color: var(--primary);
+}
+
 p, h3 {
   margin: 0;
 }
@@ -134,4 +153,5 @@ p, h3 {
 
 .read {
   margin-left: 1rem;
+  margin-right: 1rem;
 }
