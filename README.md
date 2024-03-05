@@ -23,3 +23,5 @@ Tapping into more DOM manipulation, CSS grid, and object construction. Not gonna
   - I could struggle my way through this but I'd rather just continue in the course and learn animations and transformations later
 - Server side storage
   - This could make it an actual useful library for me
+- Ego flair
+  - GitHub & LinkedIn footer

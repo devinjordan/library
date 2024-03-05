@@ -82,9 +82,6 @@ document.addEventListener('DOMContentLoaded',function () {
     // clear and refresh library with new card
     librarySection.innerHTML = '';
     displayLibrary(myLibrary);
-    console.log(myLibrary);
-    console.log(newRead);
-    console.log(newBook);
   }
 
   // newBookButton.addEventListener('click', () => {
