@@ -18,6 +18,7 @@ Tapping into more DOM manipulation, CSS grid, and object construction. Not gonna
   - Because this is the first time in a while I've put effort into this
   - I've also learned that you can preview .md files in VScode with cmd + shift + v
 - Pseudo styling
+- Constructor functions
 
 ## Items to Revisit Later
 - Form animation
