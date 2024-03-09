@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded',function () {
   // const addBookForm = document.getElementById('form');
   // const newBookButton = document.querySelector('#new-book-button');
   const submitNewBookButton = document.getElementById('submit');
+  const form = document.getElementById('form');
 
   function Book (title, author, pages, read) {
       this.title = title;
@@ -79,6 +80,9 @@ document.addEventListener('DOMContentLoaded',function () {
     const newBook = new Book(newTitle, newAuthor, newPages, newRead);
     myLibrary.push(newBook);
 
+    // clear form
+    form.reset();
+    
     // clear and refresh library with new card
     librarySection.innerHTML = '';
     displayLibrary(myLibrary);
